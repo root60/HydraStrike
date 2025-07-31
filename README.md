@@ -1,39 +1,23 @@
 <div align="center">
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Hydra.png" alt="Hydra" width="120" height="120" />
+<h1 align="center">HydraStrike</h1>
+<p align="center">
+A dynamic and intelligent attack execution platform for authorized security testing.
+</p>
+<p align="center">
+<!-- Badges -->
+<a href="https://github.com/root60/HydraStrike"><img src="https://img.shields.io/badge/python-3.x-blue.svg" alt="Python 3.x"></a>
+<a href="https://github.com/root60/HydraStrike/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
+<a href="https://github.com/root60/HydraStrike"><img src="https://img.shields.io/github/stars/root60/HydraStrike?style=social" alt="Stars"></a>
+</p>
 </div>
 
-<h1 align="center">
-<svg width="420" height="50" xmlns="http://www.w3.org/2000/svg">
-<style>
-.text {
-font-family: 'Courier New', Courier, monospace;
-font-size: 35px;
-font-weight: bold;
-fill: #E84D4D; /* Red color /
-animation: typing 3.5s steps(11, end), blink-caret .75s step-end infinite;
-white-space: nowrap;
-overflow: hidden;
-border-right: .15em solid #FFC436; / Blinking cursor */
-width: 0;
-}
-@keyframes typing {
-from { width: 0 }
-to { width: 410px }
-}
-@keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: #FFC436; }
-}
-</style>
-<text x="10" y="40" class="text">HydraStrike v1.0</text>
-</svg>
-</h1>
+⚠️ Disclaimer
+This tool is intended for educational and authorized security testing purposes only. Using HydraStrike against systems you do not have explicit permission to test is illegal and unethical. The author (root60) assumes no liability for any misuse or damage caused by this program.
 
-<p align="center">
-<strong>A Dynamic Attack Execution Platform</strong>
-</p>
 
-HydraStrike is a sophisticated, Python-based attack execution platform designed to automatically configure and optimize network attacks in real-time. It intelligently analyzes the target and unleashes a multi-headed assault for maximum effectiveness.
+🎯 About The Project
+HydraStrike is a sophisticated, Python-based attack execution platform that automates and optimizes network stress tests. It intelligently analyzes a target to identify its weaknesses and then launches a coordinated, multi-vector attack designed for maximum effectiveness. Its real-time feedback and dynamic adaptation make it a powerful tool for security professionals.
 
 <pre>
 <code class="language-bash">
@@ -45,92 +29,127 @@ HydraStrike is a sophisticated, Python-based attack execution platform designed 
 <span style="color: #00ffff;"> ||  ||_,|_,||  _,|_____/ _||  ||_|___| </span>
 <span style="color: #00ffff;">          / |                                            </span>
 <span style="color: #00ffff;">         |/                                            </span>
-<span style="color: #ff0000;">v1.0 - Dynamic Attack Platform</span>
+<span style="color: #ff0000;">v1.0 - by RedHydra</span>
 </code>
 </pre>
 
-Disclaimer: This tool is intended for educational and authorized security testing purposes only. Unauthorized use of this tool against any system is illegal. The author is not responsible for any misuse or damage caused by this tool.
-
 ✨ Features
-🎯 Smart Target Analysis: Automatically scans the target to identify open ports and running services (HTTP, HTTPS, etc.).
+🎯 Smart Target Analysis: Automatically scans the target to find open ports and identify running services.
 
-⚙️ Optimal Configuration: Dynamically determines the best attack methods and parameters based on the target's profile.
+⚙️ Dynamic Configuration: Intelligently determines the optimal attack methods and parameters based on the target's profile.
 
-💣 Multiple Attack Modules:
+💣 Multi-Vector Attacks: Employs a range of attack modules including DoS and resource exhaustion techniques.
 
-HTTP Flood: Overwhelms web servers with a high volume of requests.
+📺 Real-Time Dashboard: A color-coded terminal interface provides live statistics on the attack's progress.
 
-Slowloris: Ties up server resources by sending partial HTTP requests.
+🚀 High-Performance: Utilizes a multi-threaded architecture to execute simultaneous attack vectors efficiently.
 
-TCP Flood: Saturates the target with TCP packets.
+💻 Simple CLI: A clean and straightforward command-line interface for easy operation.
 
-UDP Flood: Floods the target with UDP packets.
+🔄 How It Works
+The tool follows a simple yet effective workflow to execute an attack.
 
-📺 Live Terminal Interface: Provides a real-time console view of attack statistics with vibrant, color-coded output.
+graph TD
+    A[Start] --> B{Target Input};
+    B --> C[Analyze Target: Scan Ports & Services];
+    C --> D[Determine Optimal Attack Config];
+    D --> E[Launch Multi-Threaded Attack Modules];
+    E --> F[Display Live Stats in Terminal];
+    F --> G{Duration Met or Ctrl+C?};
+    G -- Yes --> H[Stop Attacks & Show Final Report];
+    G -- No --> E;
+    H --> I[End];
 
-🚀 Multi-threaded Power: Utilizes a thread pool to execute multiple attack vectors simultaneously.
+🎬 Live Demo
+Below is a snapshot of the HydraStrike dashboard during an active attack.
 
-💻 Simple CLI Control: Easy-to-use command-line interface to define your target, attack duration, and thread count.
+(It is highly recommended to create a GIF of the tool in action and place it here. For now, this is a placeholder.)
 
-🛠️ Installation
-Clone the repository or download the HydraStrike.py script.
+🚀 Getting Started
+Follow these simple steps to get HydraStrike up and running.
 
-Install the necessary Python dependencies:
+Prerequisites
+Python 3.6+
+
+pip (Python package installer)
+
+Installation
+Clone the repository:
+
+git clone https://github.com/root60/HydraStrike.git
+cd HydraStrike
+
+Install the required packages:
 
 pip install -r requirements.txt
 
-▶️ Usage
-To launch an attack, simply provide a target domain or IP address.
+🕹️ Usage
+Using HydraStrike is straightforward. The primary input is the target, with optional flags to customize the attack.
 
-Command-Line Arguments
-# General Syntax
-python HydraStrike.py <target> [--duration <seconds>] [--threads <count>]
+Command Syntax:
 
-target: (Required) The domain name or IP address of the target.
+python HydraStrike.py <target> [options]
 
---duration: (Optional) The duration of the attack in seconds. Default: 60.
+Options:
 
---threads: (Optional) The number of threads per attack method. Default: Auto-configured.
+Flag
 
-Examples
-# Run a default 60-second attack on example.com
+Description
+
+Default
+
+target
+
+Required. The target's domain or IP address.
+
+N/A
+
+--duration
+
+The duration of the attack in seconds.
+
+60
+
+--threads
+
+The number of threads per attack method.
+
+Auto
+
+Examples:
+
+Run a standard 60-second attack:
+
 python HydraStrike.py example.com
 
-# Run a 5-minute (300 seconds) attack on an IP address
+Run an extended 5-minute (300 seconds) attack:
+
 python HydraStrike.py 192.168.1.100 --duration 300
 
-# Force an attack with 200 threads per method
-python HydraStrike.py testserver.local --threads 200
+Force the attack to use 200 threads per method:
 
-📊 Live Attack Interface
-Watch the attack unfold in real-time with a colorful and detailed statistics panel.
+python HydraStrike.py secure.server.net --threads 200
 
-<pre>
-<code class="language-bash">
-<span style="color: #ffff00;">[!] HydraStrike - Dynamic Attack Execution Platform</span>
-<span style="color: #ffff00;">[!] Author: RedHydra</span>
-<span style="color: #ffff00;">[!] Press Ctrl+C to stop the attack</span>
+💣 Attack Modules
+HydraStrike currently includes the following attack modules:
 
-<span style="color: #0000ff;">[+] Target Information:</span>
-Host: example.com
-IP: 93.184.216.34
-Open Ports: 80, 443
-Services: HTTP, HTTPS
+HTTP Flood: A layer 7 DoS attack that bombards a web server with a high volume of HTTP GET requests.
 
-<span style="color: #0000ff;">[+] Attack Statistics:</span>
-Duration: 35.12 seconds
-Total Requests: 175600
-Data Sent: 167.47 MB
-Requests/sec: 4999.89
-Bandwidth: 4.77 MB/s
-Success Rate: 99.82%
+Slowloris: A resource exhaustion attack that holds server connections open by sending partial HTTP requests very slowly.
 
-<span style="color: #0000ff;">[+] Active Attacks:</span>
-HTTPS Flood on port 443: <span style="color: #00ff00;">RUNNING</span>
-HTTP Flood on port 80: <span style="color: #00ff00;">RUNNING</span>
-Slowloris on port 443: <span style="color: #00ff00;">RUNNING</span>
-Slowloris on port 80: <span style="color: #00ff00;">RUNNING</span>
+TCP Flood: A low-level DoS attack that saturates the target with TCP packets, overwhelming its ability to process connections.
 
-<span style="color: #ffff00;">[+] Attack in progress...</span>
-</code>
-</pre>
+UDP Flood: A protocol-based DoS attack that floods the target with UDP packets, consuming network bandwidth and resources.
+
+🤝 Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+Fork the Project
+
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+
+Push to the Branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
