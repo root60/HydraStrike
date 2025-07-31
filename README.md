@@ -1,77 +1,48 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Hydra.png" alt="Hydra" width="120" height="120" />
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Hydra.png" alt="Hydra" width="100" height="100" />
 <h1 align="center">HydraStrike</h1>
 <p align="center">
-A dynamic and intelligent attack execution platform for authorized security testing.
-</p>
-<p align="center">
-<!-- Badges -->
-<a href="https://github.com/root60/HydraStrike"><img src="https://img.shields.io/badge/python-3.x-blue.svg" alt="Python 3.x"></a>
-<a href="https://github.com/root60/HydraStrike/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-<a href="https://github.com/root60/HydraStrike"><img src="https://img.shields.io/github/stars/root60/HydraStrike?style=social" alt="Stars"></a>
+A dynamic attack execution platform for authorized security testing.
+<br />
+<a href="#-getting-started"><strong>Explore the docs »</strong></a>
+<br />
+<br />
+<a href="https://github.com/root60/HydraStrike/issues">Report Bug</a>
+·
+<a href="https://github.com/root60/HydraStrike/issues">Request Feature</a>
 </p>
 </div>
 
-⚠️ Disclaimer
-This tool is intended for educational and authorized security testing purposes only. Using HydraStrike against systems you do not have explicit permission to test is illegal and unethical. The author (root60) assumes no liability for any misuse or damage caused by this program.
+<p align="center">
+<a href="https://github.com/root60/HydraStrike/blob/main/LICENSE"><img src="https://img.shields.io/github/license/root60/HydraStrike?style=for-the-badge" alt="License"></a>
+<a href="#"><img src="https://img.shields.io/badge/Python-3.7+-blue.svg?style=for-the-badge&logo=python" alt="Python"></a>
+<a href="https://github.com/root60/HydraStrike/stargazers"><img src="https://img.shields.io/github/stars/root60/HydraStrike?style=for-the-badge&logo=github" alt="Stars"></a>
+</p>
 
+⚠️ Disclaimer
+This tool is for educational and authorized testing purposes only. Unauthorized use is illegal. The author is not responsible for any misuse or damage.
 
 🎯 About The Project
-HydraStrike is a sophisticated, Python-based attack execution platform that automates and optimizes network stress tests. It intelligently analyzes a target to identify its weaknesses and then launches a coordinated, multi-vector attack designed for maximum effectiveness. Its real-time feedback and dynamic adaptation make it a powerful tool for security professionals.
-
-<pre>
-<code class="language-bash">
-<span style="color: #00ffff;">  _    _           _            _____ _        _ _         </span>
-<span style="color: #00ffff;"> | |  | |         | |          / | |      () |       </span>
-<span style="color: #00ffff;"> | |__| |   _  | | __ __ | ( | | _ __ | | _____ </span>
-<span style="color: #00ffff;"> |  __  | | | |/  | &#39;__/ _ |_ | | '| | |/ / _ \ </span>
-<span style="color: #00ffff;"> | |  | | || | (| | | | (| |) | || |  | |   &lt;  __/ </span>
-<span style="color: #00ffff;"> ||  ||_,|_,||  _,|_____/ _||  ||_|___| </span>
-<span style="color: #00ffff;">          / |                                            </span>
-<span style="color: #00ffff;">         |/                                            </span>
-<span style="color: #ff0000;">v1.0 - by RedHydra</span>
-</code>
-</pre>
+HydraStrike is a Python-based platform that automates and optimizes network stress tests. It intelligently analyzes a target to identify weaknesses, then launches a coordinated, multi-vector attack. Its real-time feedback and dynamic adaptation make it a powerful tool for security professionals.
 
 ✨ Features
-🎯 Smart Target Analysis: Automatically scans the target to find open ports and identify running services.
+Smart Target Analysis: Automatically scans ports and services.
 
-⚙️ Dynamic Configuration: Intelligently determines the optimal attack methods and parameters based on the target's profile.
+Dynamic Configuration: Intelligently determines the optimal attack methods.
 
-💣 Multi-Vector Attacks: Employs a range of attack modules including DoS and resource exhaustion techniques.
+Multi-Vector Attacks: Employs DoS and resource exhaustion techniques.
 
-📺 Real-Time Dashboard: A color-coded terminal interface provides live statistics on the attack's progress.
+Real-Time Dashboard: A color-coded terminal interface for live statistics.
 
-🚀 High-Performance: Utilizes a multi-threaded architecture to execute simultaneous attack vectors efficiently.
-
-💻 Simple CLI: A clean and straightforward command-line interface for easy operation.
-
-🔄 How It Works
-The tool follows a simple yet effective workflow to execute an attack.
-
-graph TD
-    A[Start] --> B{Target Input};
-    B --> C[Analyze Target: Scan Ports & Services];
-    C --> D[Determine Optimal Attack Config];
-    D --> E[Launch Multi-Threaded Attack Modules];
-    E --> F[Display Live Stats in Terminal];
-    F --> G{Duration Met or Ctrl+C?};
-    G -- Yes --> H[Stop Attacks & Show Final Report];
-    G -- No --> E;
-    H --> I[End];
-
-🎬 Live Demo
-Below is a snapshot of the HydraStrike dashboard during an active attack.
-
-(It is highly recommended to create a GIF of the tool in action and place it here. For now, this is a placeholder.)
+High-Performance: Multi-threaded architecture for efficient, simultaneous attacks.
 
 🚀 Getting Started
-Follow these simple steps to get HydraStrike up and running.
+Follow these steps to get HydraStrike running on your local machine.
 
 Prerequisites
-Python 3.6+
+Python 3.7+
 
-pip (Python package installer)
+pip package installer
 
 Installation
 Clone the repository:
@@ -79,12 +50,12 @@ Clone the repository:
 git clone https://github.com/root60/HydraStrike.git
 cd HydraStrike
 
-Install the required packages:
+Install dependencies:
 
 pip install -r requirements.txt
 
 🕹️ Usage
-Using HydraStrike is straightforward. The primary input is the target, with optional flags to customize the attack.
+The tool is operated via the command line. Provide a target and optional flags to customize the attack.
 
 Command Syntax:
 
@@ -116,40 +87,63 @@ The number of threads per attack method.
 
 Auto
 
-Examples:
+Example:
 
-Run a standard 60-second attack:
+# Run a 2-minute attack on example.com with 150 threads
+python HydraStrike.py example.com --duration 120 --threads 150
 
-python HydraStrike.py example.com
+📚 Additional Information
+<details>
+<summary><strong>View Attack Modules & How It Works</strong></summary>
 
-Run an extended 5-minute (300 seconds) attack:
+Attack Modules
+HTTP Flood: A layer 7 DoS attack using a high volume of GET requests.
 
-python HydraStrike.py 192.168.1.100 --duration 300
+Slowloris: A resource exhaustion attack that holds server connections open with partial requests.
 
-Force the attack to use 200 threads per method:
+TCP Flood: A low-level DoS attack that saturates the target with TCP packets.
 
-python HydraStrike.py secure.server.net --threads 200
+UDP Flood: A protocol-based DoS attack that floods the target with UDP packets.
 
-💣 Attack Modules
-HydraStrike currently includes the following attack modules:
+How It Works
+The tool follows a simple workflow:
 
-HTTP Flood: A layer 7 DoS attack that bombards a web server with a high volume of HTTP GET requests.
+Analyze: Scans the target for open ports and services.
 
-Slowloris: A resource exhaustion attack that holds server connections open by sending partial HTTP requests very slowly.
+Configure: Determines the best attack methods based on the analysis.
 
-TCP Flood: A low-level DoS attack that saturates the target with TCP packets, overwhelming its ability to process connections.
+Execute: Launches attack modules in parallel using a thread pool.
 
-UDP Flood: A protocol-based DoS attack that floods the target with UDP packets, consuming network bandwidth and resources.
+Report: Displays live statistics until the attack is stopped.
+
+</details>
+
+<details>
+<summary><strong>View ASCII Banner</strong></summary>
+
+  _    _           _            _____ _        _ _
+ | |  | |         | |          / ____| |      (_) |
+ | |__| |_   _  __| |_ __ __ _| (___ | |_ _ __ _| | _____
+ |  __  | | | |/ _` | '__/ _` |\___ \| __| '__| | |/ / _ \
+ | |  | | |_| | (_| | | | (_| |____) | |_| |  | |   <  __/
+ |_|  |_|\__,_|\__,_|_|  \__,_|_____/ \__|_|  |_|_|\_\___|
+          __/ |
+         |___/                 v1.0 - by RedHydra
+
+</details>
 
 🤝 Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions are welcome! Please feel free to fork the repo, create a feature branch, and open a pull request.
 
 Fork the Project
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Create your Feature Branch (git checkout -b feature/NewFeature)
 
-Commit your Changes (git commit -m 'Add some AmazingFeature')
+Commit your Changes (git commit -m 'Add some NewFeature')
 
-Push to the Branch (git push origin feature/AmazingFeature)
+Push to the Branch (git push origin feature/NewFeature)
 
 Open a Pull Request
+
+📜 License
+Distributed under the MIT License. See LICENSE for more information.
