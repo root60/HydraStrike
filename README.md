@@ -1,149 +1,128 @@
-<div align="center">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Hydra.png" alt="Hydra" width="100" height="100" />
-<h1 align="center">HydraStrike</h1>
-<p align="center">
-A dynamic attack execution platform for authorized security testing.
-<br />
-<a href="#-getting-started"><strong>Explore the docs »</strong></a>
-<br />
-<br />
-<a href="https://github.com/root60/HydraStrike/issues">Report Bug</a>
-·
-<a href="https://github.com/root60/HydraStrike/issues">Request Feature</a>
-</p>
-</div>
+# HydraStrike 🌊
 
-<p align="center">
-<a href="https://github.com/root60/HydraStrike/blob/main/LICENSE"><img src="https://img.shields.io/github/license/root60/HydraStrike?style=for-the-badge" alt="License"></a>
-<a href="#"><img src="https://img.shields.io/badge/Python-3.7+-blue.svg?style=for-the-badge&logo=python" alt="Python"></a>
-<a href="https://github.com/root60/HydraStrike/stargazers"><img src="https://img.shields.io/github/stars/root60/HydraStrike?style=for-the-badge&logo=github" alt="Stars"></a>
-</p>
+![HydraStrike Banner](https://raw.githubusercontent.com/RedHydra/HydraStrike/main/assets/banner.png) 
+<!-- You can create a banner and upload it to your repo to use here -->
 
-⚠️ Disclaimer
-This tool is for educational and authorized testing purposes only. Unauthorized use is illegal. The author is not responsible for any misuse or damage.
+**A sophisticated and dynamic attack execution platform that automatically analyzes targets, configures, and optimizes multi-vector attacks in real-time.**
 
-🎯 About The Project
-HydraStrike is a Python-based platform that automates and optimizes network stress tests. It intelligently analyzes a target to identify weaknesses, then launches a coordinated, multi-vector attack. Its real-time feedback and dynamic adaptation make it a powerful tool for security professionals.
+---
 
-✨ Features
-Smart Target Analysis: Automatically scans ports and services.
+### ⚠️ Disclaimer
 
-Dynamic Configuration: Intelligently determines the optimal attack methods.
+This tool is intended for **educational and authorized security testing purposes only**. The author is not responsible for any illegal or malicious use of this tool. Using HydraStrike against targets without prior mutual consent is illegal. **Always respect the law and ethical guidelines.**
 
-Multi-Vector Attacks: Employs DoS and resource exhaustion techniques.
+---
 
-Real-Time Dashboard: A color-coded terminal interface for live statistics.
+## ✨ Features
 
-High-Performance: Multi-threaded architecture for efficient, simultaneous attacks.
+* **🎯 Intelligent Target Analysis:** Automatically scans the target to identify open ports, services, and optimal attack vectors.
+* **🚀 Multi-Vector Attacks:** Employs a combination of attack methods (Layer 4 and Layer 7) for maximum impact.
+    * HTTP Flood
+    * HTTPS Flood
+    * Slowloris
+    * TCP Flood
+    * UDP Flood
+* **📊 Live Attack Interface:** Provides a real-time terminal UI displaying crucial statistics:
+    * Attack Duration
+    * Total Requests & Data Sent
+    * Requests per Second & Live Bandwidth
+    * Success Rate
+    * Active Attack Methods
+* **⚙️ Dynamic Configuration:** Adjusts attack parameters like thread count based on target analysis.
+* **🎨 Colorful & Clean UI:** Uses color-coded output for better readability and a professional feel.
+* **🐍 Cross-Platform:** Written in Python, making it compatible with most operating systems.
 
-🚀 Getting Started
-Follow these steps to get HydraStrike running on your local machine.
+---
 
-Prerequisites
-Python 3.7+
+## 🚀 Getting Started
 
-pip package installer
+### Prerequisites
 
-Installation
-Clone the repository:
+* [Python 3.x](https://www.python.org/downloads/)
+* `pip` (Python package installer)
 
-git clone https://github.com/root60/HydraStrike.git
-cd HydraStrike
+### Installation
 
-Install dependencies:
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/HydraStrike.git](https://github.com/YOUR_USERNAME/HydraStrike.git)
+    cd HydraStrike
+    ```
 
-pip install -r requirements.txt
+2.  **Install the required Python libraries:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(You will need to create a `requirements.txt` file containing `requests`)*
 
-🕹️ Usage
-The tool is operated via the command line. Provide a target and optional flags to customize the attack.
+---
 
-Command Syntax:
+## Usage
 
-python HydraStrike.py <target> [options]
+The script is straightforward to use. The primary argument is the target, which can be a domain name or an IP address.
 
-Options:
+### Basic Syntax
 
-Flag
+```bash
+python3 HydraStrike.py <target> [options]
+```
 
-Description
+### Arguments
 
-Default
+| Argument     | Description                                         | Default |
+|--------------|-----------------------------------------------------|---------|
+| `target`     | **Required.** The target domain or IP address.      | N/A     |
+| `--duration` | The duration of the attack in seconds.              | 60      |
+| `--threads`  | The number of threads to use per attack method.     | Dynamic |
 
-target
+### Examples
 
-Required. The target's domain or IP address.
+1.  **Launch a default attack on a domain:**
+    * This will run a 60-second attack with dynamically configured methods and threads.
+    ```bash
+    python3 HydraStrike.py example.com
+    ```
 
-N/A
+2.  **Launch an attack on an IP address for 3 minutes (180 seconds):**
+    ```bash
+    python3 HydraStrike.py 192.168.1.100 --duration 180
+    ```
 
---duration
+3.  **Launch an attack with a specific number of threads per method:**
+    * This overrides the dynamic thread configuration.
+    ```bash
+    python3 HydraStrike.py secure-target.net --threads 250
+    ```
 
-The duration of the attack in seconds.
+---
 
-60
+## ⚔️ Attack Methods
 
---threads
+HydraStrike combines several attack methods to stress-test network infrastructure and web servers.
 
-The number of threads per attack method.
+| Method       | Type      | Description                                                                                             |
+|--------------|-----------|---------------------------------------------------------------------------------------------------------|
+| **HTTP/HTTPS Flood**| Layer 7   | Sends a high volume of legitimate-looking GET requests to overwhelm a web server's resources.       |
+| **Slowloris** | Layer 7   | Establishes many connections to the target server and holds them open by sending partial requests, exhausting the server's connection pool. |
+| **TCP Flood** | Layer 4   | Inundates the target with SYN packets, attempting to consume all available connection resources.        |
+| **UDP Flood** | Layer 4   | Floods random ports on the target host with UDP packets, causing the server to check for applications listening and respond with ICMP "Destination Unreachable" packets. |
 
-Auto
+---
 
-Example:
+## 🖼️ Screenshots
 
-# Run a 2-minute attack on example.com with 150 threads
-python HydraStrike.py example.com --duration 120 --threads 150
+*(Here you can add screenshots of the tool in action)*
 
-📚 Additional Information
-<details>
-<summary><strong>View Attack Modules & How It Works</strong></summary>
+**Live Attack Interface:**
+![Live Interface Screenshot](https://raw.githubusercontent.com/RedHydra/HydraStrike/main/assets/interface.png)
+<!-- Add a screenshot of the terminal UI -->
 
-Attack Modules
-HTTP Flood: A layer 7 DoS attack using a high volume of GET requests.
+---
 
-Slowloris: A resource exhaustion attack that holds server connections open with partial requests.
+## 📜 License
 
-TCP Flood: A low-level DoS attack that saturates the target with TCP packets.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-UDP Flood: A protocol-based DoS attack that floods the target with UDP packets.
+---
 
-How It Works
-The tool follows a simple workflow:
-
-Analyze: Scans the target for open ports and services.
-
-Configure: Determines the best attack methods based on the analysis.
-
-Execute: Launches attack modules in parallel using a thread pool.
-
-Report: Displays live statistics until the attack is stopped.
-
-</details>
-
-<details>
-<summary><strong>View ASCII Banner</strong></summary>
-
-  _    _           _            _____ _        _ _
- | |  | |         | |          / ____| |      (_) |
- | |__| |_   _  __| |_ __ __ _| (___ | |_ _ __ _| | _____
- |  __  | | | |/ _` | '__/ _` |\___ \| __| '__| | |/ / _ \
- | |  | | |_| | (_| | | | (_| |____) | |_| |  | |   <  __/
- |_|  |_|\__,_|\__,_|_|  \__,_|_____/ \__|_|  |_|_|\_\___|
-          __/ |
-         |___/                 v1.0 - by RedHydra
-
-</details>
-
-🤝 Contributing
-Contributions are welcome! Please feel free to fork the repo, create a feature branch, and open a pull request.
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/NewFeature)
-
-Commit your Changes (git commit -m 'Add some NewFeature')
-
-Push to the Branch (git push origin feature/NewFeature)
-
-Open a Pull Request
-
-📜 License
-Distributed under the MIT License. See LICENSE for more information.
+**Crafted with ❤️ by RedHydra**
